@@ -1,0 +1,44 @@
+steps:
+  - name: 'hashicorp/terraform:1.0.0'
+    args:
+      - '-c'
+      - |
+        cd folders/
+        terraform init
+    id: terraform init (org_folders)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    args:
+      - '-c'
+      - |
+        cd folders/
+        terraform fmt
+    id: terraform fmt (org_folders)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    args:
+      - '-c'
+      - |
+        cd folders/
+        terraform validate
+    id: terraform validate (org_folders)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    args:
+      - '-c'
+      - |
+        cd folders/
+        terraform plan
+    id: terraform plan (org_folders)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    args:
+      - '-c'
+      - |
+        cd folders/
+        terraform apply -auto-approve
+    id: terraform apply (org_folders)
+    timeout: 1200s
+    entrypoint: sh
+options:
+  logging: CLOUD_LOGGING_ONLY
