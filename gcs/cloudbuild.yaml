@@ -3,41 +3,41 @@ steps:
     args:
       - '-c'
       - |
-        cd folders/
+        cd gcs/
         terraform init
-    id: terraform init (org_folders)
+    id: terraform init (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd folders/
+        cd gcs/
         terraform fmt
-    id: terraform fmt (org_folders)
+    id: terraform fmt (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd folders/
+        cd gcs/
         terraform validate
-    id: terraform validate (org_folders)
+    id: terraform validate (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd folders/
+        cd gcs/
         terraform plan
-    id: terraform plan (org_folders)
+    id: terraform plan (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd folders/
+        cd gcs/
         terraform apply -auto-approve
-    id: terraform apply (org_folders)
+    id: terraform apply (gcs_bucket)
     timeout: 1200s
     entrypoint: sh
 options:
