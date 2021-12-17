@@ -4,7 +4,6 @@ steps:
     args:
       - '-c'
       - |
-         terraform destroy -auto-approve
          terraform init
     id: terraform init (gcs_bucket)
     entrypoint: sh
@@ -38,6 +37,7 @@ steps:
       - '-c'
       - |
          terraform apply -auto-approve
+         terraform destroy -auto-approve
     id: terraform apply (gcs_bucket)
     timeout: 1200s
     entrypoint: sh
