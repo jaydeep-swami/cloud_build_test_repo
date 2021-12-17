@@ -4,6 +4,7 @@ steps:
     args:
       - '-c'
       - |
+         terraform refresh
          terraform init
     id: terraform init (gcs_bucket)
     entrypoint: sh
