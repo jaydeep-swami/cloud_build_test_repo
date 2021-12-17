@@ -3,40 +3,35 @@ steps:
     args:
       - '-c'
       - |
-        cd gcs/
-        terraform init
+         terraform init
     id: terraform init (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd gcs/
-        terraform fmt
+         terraform fmt
     id: terraform fmt (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd gcs/
-        terraform validate
+         terraform validate
     id: terraform validate (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd gcs/
-        terraform plan
+         terraform plan
     id: terraform plan (gcs_bucket)
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
-        cd gcs/
-        terraform apply -auto-approve
+         terraform apply -auto-approve
     id: terraform apply (gcs_bucket)
     timeout: 1200s
     entrypoint: sh
