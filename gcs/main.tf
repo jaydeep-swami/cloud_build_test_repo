@@ -5,6 +5,6 @@ module "gcs" {
   source            = "../cloud_storage"
   project_id        = var.project_id
   location          = var.region
-  name              = "jay-test-bucket"
+  name              = "jay-test-bucket-1612"
 }
 
