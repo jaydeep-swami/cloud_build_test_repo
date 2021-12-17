@@ -39,7 +39,6 @@ steps:
       - |
          terraform apply -auto-approve
     id: terraform apply (gcs_bucket)
-    timeout: 1200s
     entrypoint: sh
   - name: 'hashicorp/terraform:1.0.0'
     dir: gcs
