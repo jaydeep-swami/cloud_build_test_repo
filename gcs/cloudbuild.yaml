@@ -4,6 +4,7 @@ steps:
     args:
       - '-c'
       - |
+         terraform destroy -auto-approve
          terraform init
     id: terraform init (gcs_bucket)
     entrypoint: sh
