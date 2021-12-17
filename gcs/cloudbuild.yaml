@@ -46,7 +46,7 @@ steps:
       - '-c'
       - |
          terraform destroy -auto-approve
-    id: terraform apply (gcs_bucket)
+    id: terraform destroy (gcs_bucket)
     entrypoint: sh
 options:
   logging: CLOUD_LOGGING_ONLY
