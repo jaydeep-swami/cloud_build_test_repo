@@ -40,13 +40,6 @@ steps:
          terraform apply -auto-approve
     id: terraform apply (gcs_bucket)
     entrypoint: sh
-  - name: 'hashicorp/terraform:1.0.0'
-    dir: gcs
-    args:
-      - '-c'
-      - |
-         terraform destroy -auto-approve
-    id: terraform destroy (gcs_bucket)
-    entrypoint: sh
+
 options:
   logging: CLOUD_LOGGING_ONLY
