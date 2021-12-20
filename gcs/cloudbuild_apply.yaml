@@ -1,0 +1,45 @@
+steps:
+  - name: 'hashicorp/terraform:1.0.0'
+    dir: gcs
+    args:
+      - '-c'
+      - |
+         terraform refresh
+         terraform init
+    id: terraform init (gcs_bucket)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    dir: gcs
+    args:
+      - '-c'
+      - |
+         terraform fmt
+    id: terraform fmt (gcs_bucket)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    dir: gcs
+    args:
+      - '-c'
+      - |
+         terraform validate
+    id: terraform validate (gcs_bucket)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    dir: gcs
+    args:
+      - '-c'
+      - |
+         terraform plan
+    id: terraform plan (gcs_bucket)
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
+    dir: gcs
+    args:
+      - '-c'
+      - |
+         terraform apply -auto-approve
+    id: terraform apply (gcs_bucket)
+    entrypoint: sh
+logsBucket: 'gs://nikhil-research-anthos-bucket'
+options:
+  logging: GCS_ONLY
